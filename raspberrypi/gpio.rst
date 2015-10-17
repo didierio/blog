@@ -3,11 +3,6 @@ title
 
 How to: RaspberryPi GPIO
 
-image
------
-
-https://c2.staticflickr.com/8/7519/15737127399_6f83304c15_b.jpg
-
 excerpt
 -------
 
