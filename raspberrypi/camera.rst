@@ -63,6 +63,12 @@ Update the ``/boot/config.txt`` with:
 disable_camera_led=1
 ```
 
+## Live stream
+
+```
+raspivid -o - -t 0 -hf -w 640 -h 360 -fps 25|cvlc -vvv stream:///dev/stdin --sout '#standard{access=http,mux=ts,dst=:8090}' :demux=h264
+```
+
 And reboot (``sudo reboot``).
 
 ## Resources
