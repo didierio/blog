@@ -9,6 +9,11 @@ excerpt
 This blog post is a reminder.
 It will help you to install and configure a RaspberryPi and the Pi Camera, with motion.
 
+image
+-----
+
+http://media.didier.io/api/get/624bd68e5860a180c69d66ef318ea089
+
 content
 -------
 
