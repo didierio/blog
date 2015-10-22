@@ -3,6 +3,11 @@ title
 
 How to: RaspberryPi with touch screen
 
+image
+-----
+
+http://media.didier.io/api/get/624bd68e5860a180c69d66ef318ea089
+
 excerpt
 -------
 
