@@ -7,6 +7,7 @@ excerpt
 -------
 
 This blog post is a reminder.
+
 It will help you to play with the RaspberryPi GPIO.
 
 content

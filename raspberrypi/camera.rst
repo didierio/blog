@@ -7,6 +7,7 @@ excerpt
 -------
 
 This blog post is a reminder.
+
 It will help you to install and configure a RaspberryPi and the Pi Camera, with motion.
 
 content

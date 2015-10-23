@@ -12,6 +12,7 @@ excerpt
 -------
 
 This blog post is a reminder.
+
 It will help you to install and configure a touchscreen, in my case a Tontec 7 inches touch screen.
 
 content
