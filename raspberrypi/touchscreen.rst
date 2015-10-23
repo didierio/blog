@@ -17,7 +17,7 @@ It will help you to install and configure a touchscreen, in my case a Tontec 7 i
 content
 -------
 
-## RasbperryPi configuration
+## Full screen
 
 Configure ``/boot/config.txt`` for full LCD display:
 
@@ -30,13 +30,15 @@ hdmi_cvt 800 480 60 6 0 0 0
 max_usb_current=1
 ```
 
-## x11 dependencies
+## Calibrate touchscreen
+
+Install ``X11`` dependencies:
 
 ```
 sudo apt-get install libx11-dev libxext-dev libxi-dev x11proto-input-dev
 ```
 
-## xinput_calibrator
+Install ``xinput_calibrator``:
 
 ```
 wget http://github.com/downloads/tias/xinput_calibrator/xinput_calibrator-0.7.5.tar.gz
@@ -46,19 +48,18 @@ make
 sudo make install
 ```
 
-## Calibrate the touchscreen
+Launch ``xinput_calibrator`` in the desktop mode (``startx``).
+And paste  the resulting into ``/usr/share/X11/xorg.conf.d/99-calibration.conf``.
 
-```
-startx
-```
-
-Copy the resulting text starting with "Section" and ending with "EndSection"
-
-```
-xinput_calibrator
-```
-
-Paste the text into a file named ``01-input.conf`` at ``/usr/share/X11/xorg.conf.d/``.
+> In my case, the ``99-calibration.conf`` file looks like this:
+> ```
+> Section "InputClass"
+>         Identifier              "evdev touchscreen catchall"
+>         MatchProduct            "eGalax Inc. USB TouchController"
+>         Driver                  "evdev"
+>         Option "SwapAxes"       "1"
+> EndSection
+> ```
 
 ## Resources
 
