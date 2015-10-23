@@ -12,6 +12,9 @@ It will help you to install and configure a RaspberryPi and the Pi Camera, with 
 content
 -------
 
+This blog post is a reminder.
+It will help you to install and configure a RaspberryPi and the Pi Camera, with motion.
+
 ## Install v4l
 
 ```
@@ -63,13 +66,24 @@ Update the ``/boot/config.txt`` with:
 disable_camera_led=1
 ```
 
-## Live stream
+And reboot (``sudo reboot``).
+
+## Basic HTTP Live stream
 
 ```
 raspivid -o - -t 0 -hf -w 640 -h 360 -fps 25|cvlc -vvv stream:///dev/stdin --sout '#standard{access=http,mux=ts,dst=:8090}' :demux=h264
 ```
 
-And reboot (``sudo reboot``).
+And open "http://<ip>:8090" on VLC.
+
+Standard definitions:
+
+- SD Low: ``-w 480 -h 260 -fps 25 -b  800000``
+- SD Medium: ``-w 640 -h 360 -fps 25 -b  1200000``
+- SD High: ``-w 960 -h 540 -fps 25 -b  1800000``
+- HD Ready: ``-w 1280 -h 720 -fps 25 -b  2500000``
+- Full HD: ``-w 1920 -h 1080 -fps 25 -b  5000000``
+
 
 ## Resources
 
@@ -79,3 +93,4 @@ And reboot (``sudo reboot``).
 * [Raspberry Pi, Node.js, ffmpeg et la RaspiCam](http://eddy.martignier.ch/raspbian-node-js-ffmpeg-et-la-raspicam/)
 * [Official V4L2 driver](https://www.raspberrypi.org/forums/viewtopic.php?t=62364)
 * [The Raspberry Pi Camera Module](http://www.ics.com/blog/raspberry-pi-camera-module)
+* [Streaming depuis la Raspberry Camera](http://blog.nicolargo.com/2013/05/streaming-depuis-la-raspberry-camera.html)
