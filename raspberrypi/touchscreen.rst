@@ -59,6 +59,7 @@ And paste  the resulting into ``/usr/share/X11/xorg.conf.d/99-calibration.conf``
 >         MatchProduct            "eGalax Inc. USB TouchController"
 >         Driver                  "evdev"
 >         Option "SwapAxes"       "1"
+>         Option  "Calibration"   "1998 44 171 1908"
 > EndSection
 > ```
 
