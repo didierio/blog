@@ -145,6 +145,6 @@ With GStreamer, you can also stream video... A new road to go...
 * [GStreamer RTP and RTSP support](https://gstreamer.freedesktop.org/documentation/rtp.html)
 * [PocketSphinx on Github](https://github.com/cmusphinx/pocketsphinx)
 * [Using PocketSphinx with GStreamer and Python](http://cmusphinx.sourceforge.net/wiki/gstreamer)
-* * [How to use pocketsphinx (5prealpha) with gstreamer-1.0 in python?](http://stackoverflow.com/questions/35232989/how-to-use-pocketsphinx-5prealpha-with-gstreamer-1-0-in-python)
+* [How to use pocketsphinx (5prealpha) with gstreamer-1.0 in python?](http://stackoverflow.com/questions/35232989/how-to-use-pocketsphinx-5prealpha-with-gstreamer-1-0-in-python)
 * [Training Acoustic Model For CMUSphinx [CMUSphinx Wiki]](http://cmusphinx.sourceforge.net/wiki/tutorialam)
 * [Quelques mots sur la technologie de streaming [FR]](http://www.rap.prd.fr/pdf/technologie_streaming.pdf)
