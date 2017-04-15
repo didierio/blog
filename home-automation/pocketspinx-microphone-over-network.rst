@@ -27,9 +27,9 @@ Libraries:
 
 Devices:
 
-- The client: a RasbperryPi 3 with an USB sound card, and a basic microphone plugged on it (no microphone input as default), with a Raspbian 4.4.
-- The server: a simple computer, with a recent hardware configuration if you want better performances
-- A private network (or public, but be careful about encryption of your data!), with the two devices connected on it, with Ubuntu 16.10 running on it.
+- The client: a RasbperryPi 3 with an USB sound card, and a basic microphone plugged on it (no microphone input as default), with Raspbian 4.4.
+- The server: a simple computer, with a recent hardware configuration if you want better performances, with Ubuntu 16.10
+- A private network (or a public, but be careful about encryption of your data), with the two devices connected on it.
 
 Technically:
 
