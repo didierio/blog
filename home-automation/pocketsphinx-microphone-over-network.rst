@@ -29,11 +29,6 @@ Devices:
 - The server: a simple computer, with a recent hardware configuration, if you want better performances, with Ubuntu 16.10
 - A private network (or a public, but be careful about encryption of your data), with the two connected devices
 
-Technically:
-
-- the server, which send audio to speakers, creates a RSTP server and listens.
-- the client, which is the Rasbperry Pi with a microphone, will stream the content to the server, through RTSP.
-
 During executions, you have to consider the server is ``192.168.0.32`` and the port ``3000`` is not already used (I read somewhere ``3000`` is not a conventional port for GStreamer).
 
 ## First test
