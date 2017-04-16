@@ -9,7 +9,7 @@ content
 I'm thinking for a long time about a speech recognition for my home.
 I've checked available solutions:
 
-- Google Speech API, Alexa, and others: ok, but what I'm saying at home is highly personal. I don't want to share this data to a company, which can do what it want with.
+- Google Speech API, Alexa, and others: ok, but what I'm saying at home is highly personal. I don't want to share this data to a company, which can do what he want with.
 - home made speech recognition: I have the control, everything is managed by me.
 
 I choose the second option, because of privacy, and because it's more tricky to implement (challenge!).
