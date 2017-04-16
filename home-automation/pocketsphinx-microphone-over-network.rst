@@ -93,7 +93,7 @@ The client will not change. His only job is to stream microphone, nothing more (
 On the server:
 
 ```ssh
-gst-launch-1.0 tcpserversrc host=192.168.0.32 port=3000 ! audio/x-raw, endianness=1234, signed=true, width=16, depth=16, rate=44100, channels=1, format=S16LE ! audioconvert ! audioresample ! pocketsphinx ! fakesink```
+gst-launch-1.0 tcpserversrc host=192.168.0.32 port=3000 ! audio/x-raw, endianness=1234, signed=true, width=16, depth=16, rate=44100, channels=1, format=S16LE ! audioconvert ! audioresample ! pocketsphinx ! fakesink
 ```
 
 Explanations:
