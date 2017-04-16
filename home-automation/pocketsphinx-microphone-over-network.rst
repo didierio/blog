@@ -81,7 +81,7 @@ A good way is to use ``gst-inspect-1.0``.
 We want to stream the microphone. The only thing to do is to replace ``audiotestsrc`` by ``alsasrc``.
 
 ```ssh
-gst-launch-1.0 alsasrc ! audio/x-raw, endianness=1234, signed=true, width=16, depth=16, rate=44100, channels=1, format=S16LE ! tcpclientsink host=192.168.0.32 port=3000```
+gst-launch-1.0 alsasink ! audio/x-raw, endianness=1234, signed=true, width=16, depth=16, rate=44100, channels=1, format=S16LE ! tcpclientsink host=192.168.0.31 port=3000
 ```
 
 ## Get transcription with PocketSphinx
