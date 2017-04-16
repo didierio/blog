@@ -6,17 +6,15 @@ Use PocketSphinx with a streamed microphone over TCP with GStreamer
 content
 -------
 
-I'm thinking for a long time about a speech recognition for my home.
-I've checked available solutions:
+For a long time, I'm thinking about a speech recognition for my home.
+I've checked available options:
 
-- Google Speech API, Alexa, and others: ok, but what I'm saying at home is highly personal. I don't want to share this data to a company, which can do what he want with.
+- Google Speech API, Alexa, and others: pretty nice, but what I'm saying at home is highly personal. I don't want to share this data to a company, which can do what she want with.
 - home made speech recognition: I have the control, everything is managed by me.
 
-I choose the second option, because of privacy, and because it's more tricky to implement (challenge!).
+I choose the second option, because of privacy, and because it's more tricky to implement (challenge!). But launching PocketSphinx on a Raspberry Pi is really fun, but really slow...: not enough computing unit to do that.
 
-Yes, but launching PocketSphinx on a Raspberry Pi is really fun, but really slow...: not enough computing unit to do that.
-
-Ok! For every issue a solution! Especially when you are working with a Linux distribution. All the paradigm is pipes.
+For every issue a solution! Especially when you are working on a Linux distribution. All the paradigm is pipelines.
 
 ## Stack
 
@@ -27,16 +25,16 @@ Libraries:
 
 Devices:
 
-- The client: a RasbperryPi 3 with an USB sound card, and a basic microphone plugged on it (no microphone input as default), with Raspbian 4.4.
-- The server: a simple computer, with a recent hardware configuration if you want better performances, with Ubuntu 16.10
-- A private network (or a public, but be careful about encryption of your data), with the two devices connected on it.
+- The client: a RasbperryPi 3 with an USB sound card, and a basic microphone plugged on it (no microphone input as default), with Raspbian 4.4
+- The server: a simple computer, with a recent hardware configuration, if you want better performances, with Ubuntu 16.10
+- A private network (or a public, but be careful about encryption of your data), with the two connected devices
 
 Technically:
 
 - the server, which send audio to speakers, creates a RSTP server and listens.
 - the client, which is the Rasbperry Pi with a microphone, will stream the content to the server, through RTSP.
 
-During all the examples, you have to consider the server is ``192.168.0.32`` and the port ``3000`` is not already used (I read somewhere ``3000`` is not a conventional port for GStreamer).
+During executions, you have to consider the server is ``192.168.0.32`` and the port ``3000`` is not already used (I read somewhere ``3000`` is not a conventional port for GStreamer).
 
 ## First test
 
@@ -52,16 +50,16 @@ gst-launch-1.0 tcpserversrc host=192.168.0.32 port=3000 ! audio/x-raw, endiannes
 
 Explanations:
 
-- ``gst-launch-1.0`` is the binary to launch.
-- ``!`` is used to pipe input to manipulate it with other libraries
+- ``gst-launch-1.0`` is the binary to launch GStreamer
+- ``!`` is used to pipe and manipulate input with other libraries
 - ``tcpserversrc host=192.168.0.32 port=3000`` will open a TCP server to catch the streamed sound
-- ``audio/x-raw, endianness=1234, signed=true, width=16, depth=16, rate=44100, channels=1, format=S16LE`` is used to encode the audio format, here a standard WAV format
-- ``audioconvert`` and ``audioresample`` is used to convert and re sample the sound (oh really!)
+- ``audio/x-raw, endianness=1234, signed=true, width=16, depth=16, rate=44100, channels=1, format=S16LE`` configures the expected WAV type
+- ``audioconvert`` and ``audioresample`` is used to convert and resample the sound (oh really!)
 - ``alsasink`` send the stream to the speakers
 
 ### Client configuration
 
-Now, we have to send a sound example:
+It's time to turn on the sound:
 
 ```ssh
 gst-launch-1.0 audiotestsrc ! audio/x-raw, endianness=1234, signed=true, width=16, depth=16, rate=44100, channels=1, format=S16LE ! tcpclientsink host=192.168.0.32 port=3000
@@ -69,18 +67,18 @@ gst-launch-1.0 audiotestsrc ! audio/x-raw, endianness=1234, signed=true, width=1
 
 Explanations:
 
-- ``audiotestsrc`` will play a fake sound
+- ``audiotestsrc`` will generate a fake sound
 - ``audio/x-raw, endianness=1234, signed=true, width=16, depth=16, rate=44100, channels=1, format=S16LE`` same as the server, it is for decoding the WAV stream
 - ``tcpclientsink host=192.168.0.32 port=3000`` send the sound to the server
 
-You must ear a fake sound on your computer. But it is not generated from it! Crippy awesome!
+You must ear a fake sound on your computer. But it is not generated from it. Crippy awesome!
 
 If this not works, check the installed packages.
 A good way is to use ``gst-inspect-1.0``.
 
 ### Stream microphone
 
-Now, we want to stream the microphone. The only thing to do is to replace ``audiotestsrc`` by ``alsasrc``.
+We want to stream the microphone. The only thing to do is to replace ``audiotestsrc`` by ``alsasrc``.
 
 ```ssh
 gst-launch-1.0 alsasrc ! audio/x-raw, endianness=1234, signed=true, width=16, depth=16, rate=44100, channels=1, format=S16LE ! tcpclientsink host=192.168.0.32 port=3000```
