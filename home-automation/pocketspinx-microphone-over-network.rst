@@ -22,7 +22,7 @@ Ok! For every issue a solution! Especially when you are working with a Linux dis
 
 Libraries:
 
-- ``pocketsphinx-5prealpha`` a lightweight Python speech recognition engine (based on the Java one ``sphinbase``)
+- ``pocketsphinx-5prealpha`` a lightweight Python speech recognition engine (based on the Java one ``sphinxbase``)
 - ``gstreamer`` is perfect to transfer audio and video input over the network. We will use ``gst-streamer-1.0``, the ``0.1`` one is still used, but deprecated.
 
 Devices:
