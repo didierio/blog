@@ -130,3 +130,11 @@ But my friends can't connect their phones without my help. Because I have to pai
 My next step is to use a push button, like Amazon Dash, to allow phone pairing without doing anything.
 
 I will update this blog post when this feature has been done.
+
+# Resources
+
+* [Autostart PulseAudio on startup](https://github.com/davidedg/NAS-mod-config/blob/master/bt-sound/bt-sound-Bluez5_PulseAudio5.txt)
+* [Setup Raspberry Pi 3 as bluetooth speaker](https://raspberrypi.stackexchange.com/questions/47708/setup-raspberry-pi-3-as-bluetooth-speaker)
+* [Bluetooth headset - ArchWiki](https://wiki.archlinux.org/index.php/Bluetooth_headset#Headset_via_Bluez5.2FPulseAudio)
+* [Bluetooth Issues! Blue-utils & bluez-simeple-agent](https://www.raspberrypi.org/forums/viewtopic.php?f=28&t=133961)
+* [Raspberry Pi - Bluetooth audio streaming](https://www.raspberrypi.org/forums/viewtopic.php?t=68779)
