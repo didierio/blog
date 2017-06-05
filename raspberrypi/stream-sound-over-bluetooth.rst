@@ -80,15 +80,18 @@ In ``/etc/dbus-1/system.d/pulseaudio-bluetooth.conf`` add this in ``busconfig`` 
 
 ```
   <policy user="pulse">
-    <allow own="org.pulseaudio.Server"/>
     <allow send_destination="org.bluez"/>
-    <allow send_interface="org.bluez.Manager"/>
   </policy>
 ```
 
 To the end of ``/etc/pulse/system.pa`` file, add:
 
 ```
+### Automatically load driver modules for Bluetooth hardware
+.ifexists module-bluetooth-policy.so
+load-module module-bluetooth-policy
+.endif
+
 .ifexists module-bluetooth-discover.so
 load-module module-bluetooth-discover
 .endif
@@ -96,7 +99,7 @@ load-module module-bluetooth-discover
 
 In ``/etc/pulse/client.conf``, set ``autospawn`` to ``yes``.
 
-In ``/etc/pulse/daemon.conf``, set ``allow-module-loading`` to ``true``.
+In ``/etc/pulse/daemon.conf``, set ``allow-module-loading`` to ``yes``.
 
 Create ``/etc/systemd/system/pulseaudio.service`` file, with:
 
