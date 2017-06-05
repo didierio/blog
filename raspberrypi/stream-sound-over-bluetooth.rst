@@ -1,7 +1,7 @@
 title
 -----
 
-Stream sound over bluetooth from your phone to a RaspberrryPi 3
+Stream sound over bluetooth (A2DP) from your phone to a RaspberrryPi 3
 
 content
 -------
@@ -141,3 +141,4 @@ I will update this blog post when this feature has been done.
 * [Bluetooth headset - ArchWiki](https://wiki.archlinux.org/index.php/Bluetooth_headset#Headset_via_Bluez5.2FPulseAudio)
 * [Bluetooth Issues! Blue-utils & bluez-simeple-agent](https://www.raspberrypi.org/forums/viewtopic.php?f=28&t=133961)
 * [Raspberry Pi - Bluetooth audio streaming](https://www.raspberrypi.org/forums/viewtopic.php?t=68779)
+* [Bluetooth audio with BlueZ 5](https://github.com/ev3dev/ev3dev/issues/198)
